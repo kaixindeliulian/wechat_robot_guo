@@ -49,7 +49,7 @@ def chatme():  # 定义控制器函数gf
             keyword = content[:-2]
             if len(keyword) < 2:
                 content = '请输入正确的城市名称'
-                return content
+                return XML_STR % (fromUserName, toUserName, createTime, msgType, content)
             content = get_weather(keyword)
         else:
             # 输出反话
@@ -64,6 +64,7 @@ def chatme():  # 定义控制器函数gf
         # 返回xml文件
         reply = XML_STR % (fromUserName, toUserName, createTime, msgType, content)
         return reply
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80,debug=True)

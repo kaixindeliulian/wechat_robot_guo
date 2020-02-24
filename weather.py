@@ -18,7 +18,6 @@ def get_weather(keyword):
     now = tree.xpath('//p[@class="now"]')[0].xpath('string(.)')
     temp = tree.xpath('//dd[@class="weather"]/span')[0].xpath('string(.)')
     shidu = tree.xpath('//dd[@class="shidu"]/b/text()')
-    print(shidu)
     kongqi = tree.xpath('//dd[@class="kongqi"]/h5/text()')[0]
     pm = tree.xpath('//dd[@class="kongqi"]/h6/text()')[0]
     content = "【{0}】{1}天气\n当前温度：{2}\n今日天气：{3}\n{4}\n{5}\n{6}".format(city_name, week.split('\u3000')[0], now, temp, '\n'.join(shidu),kongqi,pm)

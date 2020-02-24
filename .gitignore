@@ -1,6 +1,0 @@
-*.log
-*.temp
-*.idea
-__pycache__/
-venv/
-config.py
